@@ -12,8 +12,8 @@ public class Constans {
     public static final String JSON = "JSON";
     public static final String GSON = "GSON";
 
-    public final static String FILE_XML = "service_station.xml";
-    public final static String FILE_JSON = "service_station.json";
+    public final static String FILE_PATH_XML = "service_station.xml";
+    public final static String FILE_PATH_JSON = "service_station.json";
     public final static String FILE_PATH = "service_station";
 
     public final static String TEXT_ERROR_DOWNLOADING = "Connection downloadFile error";
@@ -48,20 +48,7 @@ public class Constans {
     public final static String ELEMENT_CUSTOMERS_LAST_ORDER = "lastOrder";
     public final static String ELEMENT_CUSTOMERS_DATE_OF_BIRTH = "dateOfBirth";
     public final static String ELEMENT_CUSTOMERS_CAR = "car";
-    public final static String ELEMENT_CUSTOMERS_DISCOUNT= "discount";
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public final static String ELEMENT_CUSTOMERS_DISCOUNT = "discount";
 
 
 }

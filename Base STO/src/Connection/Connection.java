@@ -29,12 +29,12 @@ public class Connection {
 
     //Метод возвращает путь файла XML
     public String getFILE_XML() {
-        return Constans.FILE_XML;
+        return Constans.FILE_PATH_XML;
     }
 
     //Метод возвращает путь файла JSON
     public String getFILE_JSON() {
-        return Constans.FILE_JSON;
+        return Constans.FILE_PATH_JSON;
     }
 
     //Метод возвращает ссылку на путь файла

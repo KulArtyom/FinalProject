@@ -17,8 +17,7 @@ import java.util.Scanner;
  */
 public class Manager {
 
-
-    Connection connection = Connection.getInstance();
+    //private Connection connection = Connection.getInstance();
 
     //Реализация паттерна Singlton
     private final static Manager instance = new Manager();
@@ -36,65 +35,33 @@ public class Manager {
         return root;
     }
 
-    public String getLINK_XML() {
-        return Constans.LINK_XML;
-    }
-
-    public String getLINK_JSON() {
-        return Constans.LINK_JSON;
-    }
-
-    public String getSAX() {
-        return Constans.SAX;
-    }
-
-    public String getJSON() {
-        return Constans.JSON;
-    }
-
-    public String getGson() {
-        return Constans.GSON;
-    }
-
-    // Мелод возращает путь файла XML
-    public String getFilePathXML() {
-        return connection.getFILE_XML();
-    }
-
-    // Мелод возращает путь файла JSON
-    public String getFilePathJSON() {
-
-        return connection.getFILE_JSON();
-    }
-
     // Метод записывает ссылку на путь файла
     public void setFilePath(String filePath) {
-        connection.setFilePath(filePath);
+        Connection.getInstance().setFilePath(filePath);
     }
 
-
-    //Метод скачивает файл
+    // Метод скачивает файл
     public void downloadFiles(String link, String filePath) throws MyException, IOException {
         File file = new File(filePath);
         if (!file.exists())
-            connection.downloadFile(link);
+            Connection.getInstance().downloadFile(link);
 
     }
 
-    //Метод удаляет файл
+    // Метод удаляет файл
     public void deleteFiles(String filePath) throws MyException {
-        connection.deleteFile(filePath);
+        Connection.getInstance().deleteFile(filePath);
     }
 
     // Метод выбора парсера
     public void setChoiceParse(String lib) throws Exception {
 
-        if (lib.equals(getSAX())) {
-            this.root = new ParserSAX().parse(connection.getFilePath());
-        } else if (lib.equals(getJSON())) {
-            this.root = new ParserJSON().parse(connection.getFilePath());
-        } else if (lib.equals(getGson())) {
-            this.root = new ParserGson().parse(connection.getFilePath());
+        if (lib.equals(Constans.SAX)) {
+            this.root = new ParserSAX().parse(Connection.getInstance().getFilePath());
+        } else if (lib.equals(Constans.JSON)) {
+            this.root = new ParserJSON().parse(Connection.getInstance().getFilePath());
+        } else if (lib.equals(Constans.JSON)) {
+            this.root = new ParserGson().parse(Connection.getInstance().getFilePath());
         } else {
             throw new MyException("Manager error no such parser");
         }
@@ -175,7 +142,7 @@ public class Manager {
         if (customers != null) {
             System.out.println("Найден:");
             return customers;
-        }else  {
+        } else {
             System.out.println("Не найден: " + sName + " " + sSurname + " " + sMiddle_name);
         }
         return null;
@@ -184,7 +151,7 @@ public class Manager {
     }
 
 
-    //Метод сортирует клиентов ккоторые обращались на СТО 3 месяца назад и позже
+    //Метод сортирует клиентов ккоторые обращались на СТО 6 месяцев назад и позже
     public ArrayList<Customers> searchDate() throws MyException {
 
         if (this.root == null) {

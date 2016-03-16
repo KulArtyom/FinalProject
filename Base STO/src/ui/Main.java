@@ -11,7 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Manager manager = Manager.getInstance();
 
         int choice = Integer.MAX_VALUE;
 
@@ -22,21 +21,21 @@ public class Main {
 
                 int maxSizemain = menuMain();
                 choice = menuChoice(1, maxSizemain);
-                File filexml = new File(manager.getFilePathXML());
-                File filejs = new File(manager.getFilePathJSON());
+                File filexml = new File(Constans.FILE_PATH_XML);
+                File filejs = new File(Constans.FILE_PATH_JSON);
                 switch (choice) {
                     case 1:
                         if (!filexml.exists() && !filejs.exists()) {
-                            manager.downloadFiles(manager.getLINK_XML(), manager.getFilePathXML());
-                            manager.downloadFiles(manager.getLINK_JSON(), manager.getFilePathJSON());
+                            Manager.getInstance().downloadFiles(Constans.LINK_XML, Constans.FILE_PATH_XML);
+                            Manager.getInstance().downloadFiles(Constans.LINK_JSON, Constans.FILE_PATH_JSON);
                             System.out.println("Files successfully downloaded\n");
                         } else {
                             System.out.println("Files already exists");
                             int max_operation_download = menuChoicedownload();
                             int choice_download = menuChoice(1, max_operation_download);
                             if (choice_download == 1) {
-                                manager.downloadFiles(manager.getLINK_XML(), manager.getFilePathXML());
-                                manager.downloadFiles(manager.getLINK_JSON(), manager.getFilePathJSON());
+                                Manager.getInstance().downloadFiles(Constans.LINK_XML, Constans.FILE_PATH_XML);
+                                Manager.getInstance().downloadFiles(Constans.LINK_JSON, Constans.FILE_PATH_JSON);
                                 System.out.println("Files successfully overwrite");
                             } else if (choice_download == 2) {
                                 continue;
@@ -52,8 +51,8 @@ public class Main {
                             int max_operation_delete = menuChoiceDelete();
                             int choice_delete = menuChoice(1, max_operation_delete);
                             if (choice_delete == 1) {
-                                manager.deleteFiles(manager.getFilePathXML());
-                                manager.deleteFiles(manager.getFilePathJSON());
+                                Manager.getInstance().deleteFiles(Constans.FILE_PATH_XML);
+                                Manager.getInstance().deleteFiles(Constans.FILE_PATH_JSON);
                                 System.out.println("Files successfully deleted\n");
                             } else if (choice_delete == 2) {
                                 continue;
@@ -67,9 +66,9 @@ public class Main {
                         int max_operation_file = menuChoiceFile();
                         int choice_file = menuChoice(1, max_operation_file);
                         if (choice_file == 1) {
-                            manager.setFilePath(manager.getFilePathXML());
+                            Manager.getInstance().setFilePath(Constans.FILE_PATH_XML);
                         } else if (choice_file == 2) {
-                            manager.setFilePath(manager.getFilePathJSON());
+                            Manager.getInstance().setFilePath(Constans.FILE_PATH_JSON);
                         } else if (choice_file == 3) {
                             continue;
                         }
@@ -77,12 +76,12 @@ public class Main {
                         int max_operation_parse = menuChoiceParse();
                         int choice_parse = menuChoice(1, max_operation_parse);
                         if (choice_parse == 1) {
-                            manager.setChoiceParse(manager.getSAX());
+                            Manager.getInstance().setChoiceParse(Constans.SAX);
 
                         } else if (choice_parse == 2) {
-                            manager.setChoiceParse(manager.getJSON());
+                            Manager.getInstance().setChoiceParse(Constans.JSON);
                         } else if (choice_parse == 3) {
-                            manager.setChoiceParse(manager.getGson());
+                            Manager.getInstance().setChoiceParse(Constans.GSON);
                         } else if (choice_parse == 4) {
                             continue;
                         }
@@ -90,58 +89,58 @@ public class Main {
                         break;
 
                     case 4:
-                        if (manager.getRoot() != null) {
-                            manager.showRoot(manager.getRoot());
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().showRoot(Manager.getInstance().getRoot());
                             System.out.println("Root successful shows\n");
-                        } else if (manager.getRoot() == null) {
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 5:
-                        if (manager.getRoot() != null) {
-                            manager.cleanRoot();
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().cleanRoot();
                             System.out.println("Root successful clean\n");
-                        } else if (manager.getRoot() == null) {
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 6:
-                        if (manager.getRoot() != null) {
-                            manager.showCustomers(manager.searchCustomers());
-                        } else if (manager.getRoot() == null) {
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().showCustomers(Manager.getInstance().searchCustomers());
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 7:
-                        if (manager.getRoot() != null) {
-                            manager.showCustomers(manager.searchDate());
-                        } else if (manager.getRoot() == null) {
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().showCustomers(Manager.getInstance().searchDate());
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 8:
-                        if (manager.getRoot() != null) {
-                            manager.showCustomers(manager.searchAuto());
-                        } else if (manager.getRoot() == null) {
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().showCustomers(Manager.getInstance().searchAuto());
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 9:
-                        if (manager.getRoot() != null) {
-                            manager.showCustomers(manager.searchBirthDay());
-                        } else if (manager.getRoot() == null) {
+                        if (Manager.getInstance().getRoot() != null) {
+                            Manager.getInstance().showCustomers(Manager.getInstance().searchBirthDay());
+                        } else if (Manager.getInstance().getRoot() == null) {
                             System.out.println("Сначала скачайте и распарсите файлы");
                             System.out.println("Root = null");
                         }
                         break;
                     case 0:
-                        manager.deleteFiles(manager.getFilePathXML());
-                        manager.deleteFiles(manager.getFilePathJSON());
+                        Manager.getInstance().deleteFiles(Constans.FILE_PATH_XML);
+                        Manager.getInstance().deleteFiles(Constans.FILE_PATH_JSON);
                         System.exit(0);
                         break;
 
