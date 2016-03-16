@@ -164,7 +164,7 @@ public class Manager {
 
 
         for (Customers custom : root.getCustomers()) {
-            if (sName.equals(custom.getName()) || sSurname.equals(custom.getSurname()) || sMiddle_name.equals(custom.getMiddle_name())) {
+            if (sName.equals(custom.getName()) && sSurname.equals(custom.getSurname()) && sMiddle_name.equals(custom.getMiddle_name())) {
                 if (customers == null) {
                     customers = new ArrayList<>();
                 }
