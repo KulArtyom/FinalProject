@@ -69,9 +69,8 @@ public class Manager {
 
     // Метод очищает объект класса Root
     public void cleanRoot() {
-        if (this.root != null) {
             this.root = null;
-        }
+
     }
 
     // Метод выводит в консоль клиентов

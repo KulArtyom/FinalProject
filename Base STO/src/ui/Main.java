@@ -139,8 +139,6 @@ public class Main {
                         }
                         break;
                     case 0:
-                        Manager.getInstance().deleteFiles(Constans.FILE_PATH_XML);
-                        Manager.getInstance().deleteFiles(Constans.FILE_PATH_JSON);
                         System.exit(0);
                         break;
 
