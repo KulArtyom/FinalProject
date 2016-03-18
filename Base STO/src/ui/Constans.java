@@ -37,7 +37,6 @@ public class Constans {
     public final static String REGEX_JSON = "\\.(json)";
     public final static String REGEX_FILES = "\\.(xml|json)";
 
-
     public final static String ELEMENT_NAME = "name";
     public final static String ELEMENT_LOCATION = "location";
     public final static String ELEMENT_CUSTOMERS = "customers";
@@ -49,6 +48,7 @@ public class Constans {
     public final static String ELEMENT_CUSTOMERS_DATE_OF_BIRTH = "dateOfBirth";
     public final static String ELEMENT_CUSTOMERS_CAR = "car";
     public final static String ELEMENT_CUSTOMERS_DISCOUNT = "discount";
+
 
 
 }

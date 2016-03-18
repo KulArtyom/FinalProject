@@ -38,9 +38,7 @@ public class Main {
                                             e.printStackTrace();
                                         }
                                         System.out.print(".");
-
                                     }
-
                                 }
                             });
                             thread.start();
@@ -194,6 +192,7 @@ public class Main {
         return max;
     }
 
+    //метод выбора функций меню
     public static int menuChoice(int choiceFist, int choiceLates) {
 
         int choise = 0;
@@ -219,6 +218,7 @@ public class Main {
         return choise;
     }
 
+    //метод выбора скачки файла
     public static int menuChoicedownload() {
         int max = 2;
         System.out.println("Введите: ");
@@ -228,6 +228,7 @@ public class Main {
         return max;
     }
 
+    //метод выбора удаления файла
     public static int menuChoiceDelete() {
         final int max = 2;
         System.out.println("Введите: ");
@@ -236,6 +237,7 @@ public class Main {
         return max;
     }
 
+    //метод выбора файла для парсинга
     public static int menuChoiceFile() {
         final int max = 3;
         System.out.println("Выберите файл который хотите распарсить: ");
@@ -245,6 +247,7 @@ public class Main {
         return max;
     }
 
+    // метод выбора парсера
     public static int menuChoiceParse() {
         final int max = 4;
         System.out.println("Введите: ");
