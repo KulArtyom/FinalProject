@@ -11,7 +11,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         int choice = Integer.MAX_VALUE;
 
         do {
@@ -23,11 +22,32 @@ public class Main {
                 choice = menuChoice(1, maxSizemain);
                 File filexml = new File(Constans.FILE_PATH_XML);
                 File filejs = new File(Constans.FILE_PATH_JSON);
+
                 switch (choice) {
                     case 1:
                         if (!filexml.exists() && !filejs.exists()) {
+                            final Thread thread = new Thread(new Runnable() {
+
+                                @Override
+                                public void run() {
+                                    System.out.print("Подождите идет скачиваение");
+                                    for (int i = 0; i < 15; i++) {
+                                        try {
+                                            Thread.sleep(500);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        System.out.print(".");
+
+                                    }
+
+                                }
+                            });
+                            thread.start();
+                            thread.join();
                             Manager.getInstance().downloadFiles(Constans.LINK_XML, Constans.FILE_PATH_XML);
                             Manager.getInstance().downloadFiles(Constans.LINK_JSON, Constans.FILE_PATH_JSON);
+                            System.out.println("\n");
                             System.out.println("Files successfully downloaded\n");
                         } else {
                             System.out.println("Files already exists");

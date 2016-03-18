@@ -17,8 +17,6 @@ import java.util.Scanner;
  */
 public class Manager {
 
-    //private Connection connection = Connection.getInstance();
-
     //Реализация паттерна Singlton
     private final static Manager instance = new Manager();
 
@@ -60,7 +58,7 @@ public class Manager {
             this.root = new ParserSAX().parse(Connection.getInstance().getFilePath());
         } else if (lib.equals(Constans.JSON)) {
             this.root = new ParserJSON().parse(Connection.getInstance().getFilePath());
-        } else if (lib.equals(Constans.JSON)) {
+        } else if (lib.equals(Constans.GSON)) {
             this.root = new ParserGson().parse(Connection.getInstance().getFilePath());
         } else {
             throw new MyException("Manager error no such parser");
@@ -103,7 +101,6 @@ public class Manager {
 
     // Метод выводит в консоль объект Root
     public void showRoot(Root root) {
-
         System.out.println("Name: " + root.getName());
         System.out.println("Location: " + root.getLocation());
         showCustomers(root.getCustomers());
