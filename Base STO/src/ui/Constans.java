@@ -65,6 +65,43 @@ public class Constans {
     public final static String MAIN_TEXT_FIRST_DOWNLOAD = "First download and parse files";
     public final static String MAIN_TEXT_FIRST_ROOT_NULL = "Root = null";
     public final static String MAIN_TEXT_FIRST_ROOT_CLEAN = "Root successful clean\n";
+    public final static String MAIN_TEXT_FIRST_INCORRECT_VALUE = "You have entered an incorrect value";
+
+
+    public final static String MAIN_MENU_TEXT_1 = "\"1\" - Скачать файлы xml и json";
+    public final static String MAIN_MENU_TEXT_2 = "\"2\" - Удалить файлы";
+    public final static String MAIN_MENU_TEXT_3 = "\"3\" - Распарсить файл";
+    public final static String MAIN_MENU_TEXT_4 = "\"4\" - Вывести объект root";
+    public final static String MAIN_MENU_TEXT_5 = "\"5\" - Удалить объект root";
+    public final static String MAIN_MENU_TEXT_6 = "\"6\" - Произвести поиск по ФИО";
+    public final static String MAIN_MENU_TEXT_7 = "\"7\" - Вывести клиентов которые обращались более 6 месяцев назад";
+    public final static String MAIN_MENU_TEXT_8 = "\"8\" - Произвести поиск клиентов по марке авто";
+    public final static String MAIN_MENU_TEXT_9 = "\"9\" - Вывести клиентов с днем рождения в этом месяце";
+    public final static String MAIN_MENU_TEXT_0 = "\"0\" - Выход";
+
+    public final static String MENU_CHOICE_DOWNLOADED_ENTER = "Введите: ";
+    public final static String MENU_CHOICE_DOWNLOADED_1 = "\"1\" - Перезаписать файлы";
+    public final static String MENU_CHOICE_DOWNLOADED_2 = "\"2\" - Вернуться в гланое меню";
+
+    public final static String MENU_CHOICE_FILE_ENTER = "Выберите файл который хотите распарсить: ";
+    public final static String MENU_CHOICE_FILE_1 = "\"1\" - файл xml";
+    public final static String MENU_CHOICE_FILE_2 = "\"2\" - файл json";
+    public final static String MENU_CHOICE_FILE_3 = "\"3\" - выйти в главное меню";
+
+    public final static String MENU_CHOICE_PARSE_ENTER = "Введите: ";
+    public final static String MENU_CHOICE_PARSE_1 = "\"1\" - выбрать парсер - \"SAX\"";
+    public final static String MENU_CHOICE_PARSE_2 = "\"2\" - выбрать парсер - \"JSON\"";
+    public final static String MENU_CHOICE_PARSE_3 = "\"3\" - выбрать парсер - \"GSON\"";
+    public final static String MENU_CHOICE_PARSE_4 = "\"4\" - выйти в главное меню";
+
+    public final static String MENU_CHOICE_DELETED_ENTER = "Введите: ";
+    public final static String MENU_CHOICE_DELETED_1= "\"1\" - удалить файлы xml и json";
+    public final static String MENU_CHOICE_DELETED_2= "\"2\" - выйти в главное меню";
+
+
+
+
+
 
 
 }

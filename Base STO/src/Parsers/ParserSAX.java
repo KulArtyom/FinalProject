@@ -77,15 +77,11 @@ public class ParserSAX extends DefaultHandler implements ParseInterface {
                 throw new SAXException("ParserSAX ParseException " + e.toString());
             }
         }
-
         if (thisElement.equals(Constans.ELEMENT_CUSTOMERS_CAR) && customers != null) {
             customers.getCar().add(new String(ch, start, length));
         }
-
         if (thisElement.equals(Constans.ELEMENT_CUSTOMERS_DISCOUNT) && customers != null) {
             customers.setDiscount(new Boolean(new String(ch, start, length)));
-
-
 
             root.getCustomers().add(customers);
             customers = null;

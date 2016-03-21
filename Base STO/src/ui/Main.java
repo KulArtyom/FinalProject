@@ -179,16 +179,16 @@ public class Main {
     //Меню
     public static int menuMain() {
         final int max = 9;
-        System.out.println("\"1\" - Скачать файлы xml и json");
-        System.out.println("\"2\" - Удалить файлы");
-        System.out.println("\"3\" - Распарсить файл");
-        System.out.println("\"4\" - Вывести объект root");
-        System.out.println("\"5\" - Удалить объект root");
-        System.out.println("\"6\" - Произвести поиск по ФИО");
-        System.out.println("\"7\" - Вывести клиентов которые обращались более 6 месяцев назад");
-        System.out.println("\"8\" - Произвести поиск клиентов по марке авто");
-        System.out.println("\"9\" - Вывести клиентов с днем рождения в этом месяце");
-        System.out.println("\"0\" - Выход");
+        System.out.println(Constans.MAIN_MENU_TEXT_1);
+        System.out.println(Constans.MAIN_MENU_TEXT_2);
+        System.out.println(Constans.MAIN_MENU_TEXT_3);
+        System.out.println(Constans.MAIN_MENU_TEXT_4);
+        System.out.println(Constans.MAIN_MENU_TEXT_5);
+        System.out.println(Constans.MAIN_MENU_TEXT_6);
+        System.out.println(Constans.MAIN_MENU_TEXT_7);
+        System.out.println(Constans.MAIN_MENU_TEXT_8);
+        System.out.println(Constans.MAIN_MENU_TEXT_9);
+        System.out.println(Constans.MAIN_MENU_TEXT_0);
         return max;
     }
 
@@ -209,10 +209,8 @@ public class Main {
                 if (choise >= choiceFist && choise <= choiceLates) {
                     break;
                 } else {
-                    System.out.println("Вы ввели неверное значение");
+                    System.out.println(Constans.MAIN_TEXT_FIRST_INCORRECT_VALUE);
                 }
-            } else {
-                System.out.println("Вы ввели неверное значение");
             }
         } while (true);
         return choise;
@@ -221,9 +219,9 @@ public class Main {
     //метод выбора скачки файла
     public static int menuChoicedownload() {
         int max = 2;
-        System.out.println("Введите: ");
-        System.out.println("\"1\" - Перезаписать файлы");
-        System.out.println("\"2\" - Вернуться в гланое меню");
+        System.out.println(Constans.MENU_CHOICE_DOWNLOADED_ENTER);
+        System.out.println(Constans.MENU_CHOICE_DOWNLOADED_1);
+        System.out.println(Constans.MENU_CHOICE_DOWNLOADED_2);
 
         return max;
     }
@@ -231,30 +229,30 @@ public class Main {
     //метод выбора удаления файла
     public static int menuChoiceDelete() {
         final int max = 2;
-        System.out.println("Введите: ");
-        System.out.println("\"1\" - удалить файлы xml и json");
-        System.out.println("\"2\" - выйти в главное меню");
+        System.out.println(Constans.MENU_CHOICE_DELETED_ENTER);
+        System.out.println(Constans.MENU_CHOICE_DELETED_1);
+        System.out.println(Constans.MENU_CHOICE_DELETED_2);
         return max;
     }
 
     //метод выбора файла для парсинга
     public static int menuChoiceFile() {
         final int max = 3;
-        System.out.println("Выберите файл который хотите распарсить: ");
-        System.out.println("\"1\" - файл xml");
-        System.out.println("\"2\" - файл json");
-        System.out.println("\"3\" - выйти в главное меню");
+        System.out.println(Constans.MENU_CHOICE_FILE_ENTER);
+        System.out.println(Constans.MENU_CHOICE_FILE_1);
+        System.out.println(Constans.MENU_CHOICE_FILE_2);
+        System.out.println(Constans.MENU_CHOICE_FILE_3);
         return max;
     }
 
     // метод выбора парсера
     public static int menuChoiceParse() {
         final int max = 4;
-        System.out.println("Введите: ");
-        System.out.println("\"1\" - выбрать парсер - \"SAX\"");
-        System.out.println("\"2\" - выбрать парсер - \"JSON\"");
-        System.out.println("\"3\" - выбрать парсер - \"GSON\"");
-        System.out.println("\"4\" - выйти в главное меню");
+        System.out.println(Constans.MENU_CHOICE_PARSE_ENTER);
+        System.out.println(Constans.MENU_CHOICE_PARSE_1);
+        System.out.println(Constans.MENU_CHOICE_PARSE_2);
+        System.out.println(Constans.MENU_CHOICE_PARSE_3);
+        System.out.println(Constans.MENU_CHOICE_PARSE_4);
         return max;
     }
 

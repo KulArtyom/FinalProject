@@ -54,68 +54,43 @@ public class Connection {
         try {
 
             String link = LINK;
-
             InputStream inputStream = null;
 
             FileOutputStream outputStream = null;
-
             URL url = new URL(LINK);
-
             HttpURLConnection httpURLConnection =
                     (HttpURLConnection) url.openConnection();
 
             int responseCode = httpURLConnection.getResponseCode();
-
             if (responseCode == httpURLConnection.HTTP_OK) {
-
                 inputStream = httpURLConnection.getInputStream();
-
                 String result = "";
-
                 Pattern pattern = Pattern.compile(Constans.REGEX_FILES);
-
                 Matcher matcher = pattern.matcher(link);
 
                 if (matcher.find()) {
-
                     result = matcher.group();
-
                 } else {
-
                     throw new MyException(Constans.TEXT_ERROR_DOWNLOADING);
                 }
 
                 File file = new File(Constans.FILE_PATH + result);
-
                 outputStream = new FileOutputStream(file);
-
                 int byteRead = -1;
-
                 byte[] buffer = new byte[512];
-
                 while ((byteRead = inputStream.read(buffer)) != -1) {
-
                     outputStream.write(buffer, 0, byteRead);
                 }
-
             } else {
                 throw new MyException(Constans.TEXT_ERROR_DOWNLOADING_RESPONSE);
             }
-
             inputStream.close();
-
             outputStream.close();
-
         } catch (UnknownHostException e) {
-
             throw new MyException(Constans.TEXT_ERROR_DOWNLOADING_UNKNOWNHOST);
-
         } catch (IOException e) {
-
             throw new MyException(Constans.TEXT_ERROR_DOWNLOADING_IOEXCEPTION);
-
         } catch (Exception e) {
-
             throw new MyException(Constans.TEXT_ERROR_DOWNLOADING_UNKNOW_ERROR);
         }
     }
@@ -126,7 +101,7 @@ public class Connection {
         File file = new File(filePath);
         if (!file.exists()) {
             throw new MyException(Constans.TEXT_ERROR_DELETE_FILE + filePath + Constans.TEXT_ERROR_DELETE_NOT_FOUND);
-    }
+        }
         if (!file.delete()) {
             throw new MyException(Constans.TEXT_ERROR_DELETE);
         }
