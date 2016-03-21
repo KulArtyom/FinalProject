@@ -124,14 +124,11 @@ public class Connection {
     public void deleteFile(String filePath) throws MyException {
 
         File file = new File(filePath);
-
         if (!file.exists()) {
             throw new MyException(Constans.TEXT_ERROR_DELETE_FILE + filePath + Constans.TEXT_ERROR_DELETE_NOT_FOUND);
     }
-
         if (!file.delete()) {
             throw new MyException(Constans.TEXT_ERROR_DELETE);
-
         }
     }
 }
